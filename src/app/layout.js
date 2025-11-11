@@ -1,5 +1,6 @@
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={nosifer.className}>
       <body className="font-[var(--font-nosifer)]">
         {children}
+        <SpeedInsights/>
       </body>
     </html>
   );
