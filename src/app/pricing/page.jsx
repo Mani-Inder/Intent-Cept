@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import Header from "../components/shared/Header";
 import Footer from "../components/shared/Footer";
@@ -8,6 +10,9 @@ import Integrations from "../components/Integrations";
 import WhyChooseUs from "../components/WhyChooseUs";
 import HowItWorks from "../components/HowItWorks";
 import IntegrationsGrid from "../components/IntegrationsGrid";
+import Services from "../components/Services";
+
+
 
 export default function PricingPage() {
   return (
@@ -15,13 +20,14 @@ export default function PricingPage() {
         <Header />
         <div className="bg-white"> 
             <PricingHero/>
-        </div>
-        
+        </div> 
+        <Integrations/>
+
         <PricingPlans />
         <HowItWorks/>
-        <Integrations/>
         <WhyChooseUs/>
-        <IntegrationsGrid/>        
+        <IntegrationsGrid/>   
+        <Services/>     
         <PricingFAQ />
       
       <Footer />

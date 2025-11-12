@@ -1,178 +1,116 @@
+"use client";
 import React from "react";
-import {
-  Mail,
-  Zap,
-  Link2,
-  Cloud,
-  Workflow,
-  Send,
-  Printer,
-  Settings,
-  Repeat,
-} from "lucide-react";
 import Image from "next/image";
 
-export default function IntegrationsGrid({ glass = false }) {
+export default function IntegrationsGrid() {
   const integrations = [
     {
-      icon: ( <img
-            src="Integrations_logos/Lead.png"
-            alt="LeadConnector"
-            width={30}
-            height={30}
-      />
-    ),
+      icon: "/Integrations_logos/Lead.png",
       title: "LeadConnector",
       desc: "Sync and manage your leads effortlessly with LeadConnector. Streamline follow-ups and nurture prospects within your CRM.",
       link: "https://www.leadconnectorhq.com/",
     },
     {
-      icon: ( <Image 
-            src="Integrations_logos/zapier-icon.svg"
-            alt="Zapier"
-            width={30}
-            height={30}
-      />
-    ),
+      icon: "/Integrations_logos/zapier-icon.svg",
       title: "Zapier",
-      desc: "Automate workflows across apps and streamline your processes. Save hours with smart, trigger-based automation.",
-
+      desc: "Turn chaos into smooth operations by automating workflows yourself—no developers, no IT tickets, no delays. The only limit is your imagination.",
       link: "https://zapier.com/",
     },
     {
-      icon: ( <img
-            src="Integrations_logos/kartra.png"
-            alt="Kartra"
-            width={30}
-            height={30}
-      />
-    ),
+      icon: "/Integrations_logos/kartra.png",
       title: "Kartra",
-      desc: "Connect leads directly to Kartra’s all-in-one marketing suite. Manage campaigns, sales funnels, and customer journeys.",
-      link: "https://www.kartra.com/",
+      desc: "Connect your leads directly to Kartra’s all-in-one marketing platform. Automate campaigns, sales funnels, and customer interactions.",
+      link: "https://kartra.com/",
     },
     {
-      icon: ( <Image 
-            src="Integrations_logos/mailbox.svg"
-            alt="MailBox Power"
-            width={30}
-            height={30}
-      />
-    ),
+      icon: "/Integrations_logos/mailbox.png",
       title: "MailBoxPower",
-      desc: "Mailbox Power automates client gifting and direct mail to make nurturing relationships simple and memorable.",
-      link: "https://www.mailboxpower.com/",
+      desc: "Mailbox Power is the award-winning, all-in-one platform for automating client gifting & direct mail.",
+      link: "https://go.mailboxpower.com/",
     },
     {
-      icon: ( <img
-            src="Integrations_logos/Click-Funnels.png"
-            alt="Click-Funnels"
-            width={30}
-            height={30}
-      />
-    ),
+      icon: "/Integrations_logos/Click-Funnels.png",
       title: "ClickFunnels",
-      desc: "Send leads directly into your ClickFunnels pipelines and optimize your conversions without manual setup.",
+      desc: "Instantly direct leads into your ClickFunnels sales funnels. Optimize conversions and turn prospects into paying customers effortlessly.",
       link: "https://www.clickfunnels.com/",
     },
     {
-      icon: ( <img
-            src="Integrations_logos/Send-Grid.png"
-            alt="SendGrid"
-            width={100}
-            height={100}
-      />
-    ),
+      icon: "/Integrations_logos/webhooks.png",
+      title: "Custom Webhook",
+      desc: "Instantly send leads to any platform with our flexible webhook integration. Automate workflows and ensure real-time data transfer.",
+      link: "https://zapier.com/apps/webhook/integrations",
+    },
+    {
+      icon: "/Integrations_logos/Send-Grid.png",
       title: "SendGrid",
-      desc: "Send transactional or marketing emails through SendGrid’s reliable cloud-based email delivery platform.",
-      link: "https://sendgrid.com/",
+      desc: "SendGrid is a cloud-based email delivery platform that helps businesses manage and send both transactional and marketing emails efficiently.",
+      link: "https://sendgrid.com/en-us",
     },
+    
     {
-      icon: ( <img
-            src="Integrations_logos/Quick-Print-Studio.png"
-            alt="QuickStudio"
-            width={80}
-            height={80}
-      />
-    ),
-      title: "QuickPrintStudio",
-      desc: "Automate printing and delivery with QuickPrint — ideal for branded mailers and client communications.",
-      link: "#",
-    },
-    {
-      icon: ( <Image 
-            src="Integrations_logos/make-color.svg"
-            alt="Zapier"
-            width={30}
-            height={30}
-      />
-    ),
+      icon: "/Integrations_logos/make-color.svg",
       title: "Make",
-      desc: "Visual workflow builder that lets you automate and connect apps without any coding knowledge.",
-      link: "https://www.make.com/",
+      desc: "Make is a visual platform that allows users to automate workflows and connect various applications and services without needing to write code.",
+      link: "https://www.make.com/en",
     },
   ];
 
-  // Dynamic card style
-  const cardStyle = glass
-    ? "group rounded-2xl p-8 text-left bg-white/30 backdrop-blur-md border border-white/40 shadow-[0_8px_32px_rgba(31,38,135,0.1)] hover:shadow-[0_8px_40px_rgba(31,38,135,0.15)] transition-all duration-300"
-    : "group rounded-2xl p-8 text-left bg-white border border-gray-100 shadow-sm hover:shadow-[0_12px_35px_rgba(165,48,0,0.1)] hover:border-[#a53000]/30 transition-all duration-300";
-
   return (
-    <section
-      id="integrations"
-      className="py-24 px-6 text-center relative bg-gradient-to-b from-white via-[#fff8f6] to-white overflow-hidden font-sans"
-    >
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(165,48,0,0.07),_transparent_60%)] -z-10"></div>
-
+    <section id="integrations" className="bg-[#fafaff] py-20 px-6 font-sans text-center">
       {/* Heading */}
-      <h2 className="text-[42px] md:text-[50px] font-bold text-gray-900 mb-4 tracking-tight">
-        Connect, Automate, <span className="text-[#a53000]">Grow Smarter</span>
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        Integrations
       </h2>
-      <p className="text-gray-700 mb-14 max-w-2xl mx-auto text-[18px] leading-relaxed">
-        Integrate your agency workflows with powerful marketing and automation
-        tools. Connect once — automate forever.
+      <p className="text-gray-600 mb-14 max-w-2xl mx-auto text-lg">
+        Connect your favorite tools and automate your workflows seamlessly.
       </p>
 
-      {/* Integration Cards */}
-      <div className="  grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        {integrations.map((item, i) => (
-          <div key={i} className={cardStyle}>
-            <div
-              className={`bg-[#fff8f6] inline-flex items-center justify-center w-14 h-14 rounded-full ${item.color} mb-5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6`}
-            >
-              {item.icon}
+      {/* Grid */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-3">
+        {integrations.map((item, index) => (
+          <div
+            key={index}
+            className="bg-white border border-gray-200 rounded-lg p-6 text-left hover:shadow-md transition-all duration-300"
+          >
+            {/* Icon */}
+            <div className="flex items-center justify-center w-10 h-10 rounded-md bg-[#fff3ef] mb-4">
+              <Image
+                src={item.icon}
+                alt={item.title}
+                width={24}
+                height={24}
+                className="object-contain"
+                
+             />
             </div>
-            <h3 className="text-[22px] font-semibold text-gray-900 mb-2">
+
+            {/* Title */}
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
               {item.title}
             </h3>
-            <p className="text-gray-600 leading-relaxed text-[18px] mb-3">
+
+            {/* Description */}
+            <p className="text-gray-600 text-[15px] leading-relaxed mb-3">
               {item.desc}
             </p>
 
-            {/* Simple Text Link */}
-            {item.link && (
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#a53000] font-medium  hover:text-[#8f2800] transition-colors duration-200"
-              >
-                Learn More →
-              </a>
-            )}
+            {/* Learn More */}
+            <a
+              href={item.link}
+              className="text-[#a53000] font-medium hover:text-[#8f2800] text-[15px] inline-flex items-center"
+            >
+              Learn More <span className="ml-1">›</span>
+            </a>
           </div>
         ))}
       </div>
 
-      {/* CTA Button */}
-      <div className="mt-20">
-        <a
-          href="/book-demo/"
-          className="inline-block bg-[#a53000] hover:bg-[#8f2800] text-white px-8 py-3 rounded-full font-semibold text-[17px] shadow-md hover:shadow-lg transition-all duration-300"
-        >
-          Get Started
+      {/* CTA */}
+      <div className="mt-14">
+        <a href="/book-demo/">
+          <button className="bg-[#a53000] text-white font-semibold px-8 py-3 rounded-md hover:bg-[#8f2800] transition-all duration-300">
+            Get Started
+          </button>
         </a>
       </div>
     </section>

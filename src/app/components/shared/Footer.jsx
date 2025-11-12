@@ -1,51 +1,40 @@
+// "use client";
 import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="w-full font-sans">
+    <footer className="w-full font-sans bg-gray-600 text-gray-300">
       {/* Top Section */}
-      <div className="bg-[#EEEEEE] text-gray-300 text-center py-8">
-        <div className="max-w-6xl mx-auto flex flex-col items-center space-y-6">
+      <div className="py-10 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto flex flex-col items-center space-y-6 text-center">
           {/* Logo */}
           <img
             src="/Logos/footer-IntentCept.png"
             alt="IntentCept Logo"
-            className="h-10 w-auto object-contain scale-270"
+            className="h-8 sm:h-10 w-auto object-contain scale-300"
           />
 
           {/* Divider Line */}
           <div className="w-2/3 border-t border-gray-400"></div>
 
           {/* Footer Links */}
-          <div className="flex justify-center items-center flex-wrap gap-8 text-black font-semibold text-[15px]">
-            <a
-              href="#"
-              className="transition-all duration-300 hover:text-[#a53000]"
-            >
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-sm sm:text-[15px] font-semibold text-gray-200">
+            <a href="/privacy-policy/" className="hover:text-[#a53000] transition-colors">
               Privacy Policy
             </a>
-            <span className="text-gray-500">|</span>
-            <a
-              href="#"
-              className="transition-all duration-300 hover:text-[#a53000]"
-            >
+            <span className="text-gray-400 hidden sm:inline">|</span>
+            <a href="/terms-of-service/" className="hover:text-[#a53000] transition-colors">
               Terms of Use
             </a>
-            <span className="text-gray-500">|</span>
-            <a
-              href="#"
-              className="transition-all duration-300 hover:text-[#a53000]"
-            >
-              Affiliate
-            </a>
+            
           </div>
         </div>
       </div>
 
-      {/* Bottom Copyright Bar */}
-      <div className="bg-[#2a2e36] text-center py-3 font-sans">
-        <p className="text-[13px] text-white">
-          © Copyright {new Date().getFullYear()} IntentCept. All rights reserved.
+      {/* Bottom Copyright */}
+      <div className="bg-[#2a2e36] text-center py-3">
+        <p className="text-xs sm:text-[13px] text-gray-200">
+          © {new Date().getFullYear()} IntentCept. All rights reserved.
         </p>
       </div>
     </footer>

@@ -1,38 +1,54 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
+
+// app/page.jsx
+export const metadata = {
+  title: "IntentCept | Intelligent Acquisition System",
+  description:
+    "Identify, capture, and convert high-intent leads with IntentCept’s AI-powered acquisition system for agencies and marketers.",
+  alternates: {
+    canonical: "https://intentcept.vercel.app/",
+  },
+};
+
 
 export default function Header() {
-  return (
-    <header className="w-full bg-white shadow-md border-b border-gray-100 font-sans sticky top-0 z-[1000]">
-      <div className="max-w-7xl mx-auto flex justify-between items-center py-3 px-8 relative">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <a href="/" className="flex items-center">
-            <img
-              src="/Logos/IntentCept.png"
-              alt="IntentCept Logo"
-              className="h-12 w-auto object-contain scale-400"
-            />
-          </a>
-        </div>
+  const [isOpen, setIsOpen] = useState(false);
 
-        {/* Navigation */}
-        <nav className="flex items-center gap-16 text-gray-800 font-semibold text-[16px]">
-          {/* About with dropdown */}
+  return (
+    <header className="w-full bg-white border-b border-gray-100 shadow-sm font-sans sticky top-0 z-[1000]">
+      <div className="max-w-7xl mx-auto flex justify-between items-center py-3 px-4 sm:px-8 relative">
+        {/* Logo */}
+        <a href="/" className="flex items-center">
+          <Image
+            src="/Logos/IntentCept.png"
+            alt="IntentCept Logo"
+            width={24}
+            height={24}
+            priority
+            className="h-10 sm:h-12 w-auto object-contain scale-400"
+          />
+        </a>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-10 lg:gap-14 text-gray-800 font-semibold text-[15px] lg:text-[16px]">
+          {/* About Dropdown */}
           <div className="relative group">
             <a href="/">
-              <button className="relative hover:text-orange-700 transition-colors after:content-[''] after:absolute after:left-0 after:bottom-[-6px] after:w-0 after:h-[2px] after:bg-orange-700 after:transition-all after:duration-300 hover:after:w-full">
-                About
-              </button>
+            <button className="hover:text-[#a53000] transition-colors">
+              About
+            </button>
             </a>
-
-            {/* Elegant Dropdown */}
-            <div className="absolute left-0 mt-3 w-52 rounded-2xl backdrop-blur-md bg-white/70 border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.08)] opacity-0 invisible translate-y-3 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]">
-              <ul className="py-3 text-gray-800">
+            
+            <div className="absolute left-0 mt-3 w-48 rounded-lg bg-white border border-gray-200 shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
+              <ul className="py-2 text-gray-800 text-sm">
                 <li>
                   <a
                     href="#why-us"
-                    className="block px-5 py-2.5 hover:text-orange-700 hover:bg-white/40 transition-all duration-200 rounded-lg"
+                    className="block px-4 py-2 hover:bg-gray-50 hover:text-[#a53000]"
                   >
                     Why Us
                   </a>
@@ -40,7 +56,7 @@ export default function Header() {
                 <li>
                   <a
                     href="#integrations"
-                    className="block px-5 py-2.5 hover:text-orange-700 hover:bg-white/40 transition-all duration-200 rounded-lg"
+                    className="block px-4 py-2 hover:bg-gray-50 hover:text-[#a53000]"
                   >
                     Integrations
                   </a>
@@ -48,7 +64,7 @@ export default function Header() {
                 <li>
                   <a
                     href="#services"
-                    className="block px-5 py-2.5 hover:text-orange-700 hover:bg-white/40 transition-all duration-200 rounded-lg"
+                    className="block px-4 py-2 hover:bg-gray-50 hover:text-[#a53000]"
                   >
                     Services
                   </a>
@@ -58,27 +74,23 @@ export default function Header() {
           </div>
 
           {/* Pricing */}
-          <a
-            href="/pricing"
-            className="relative inline-block hover:text-orange-700 transition-colors after:content-[''] after:absolute after:left-0 after:bottom-[-6px] after:w-0 after:h-[2px] after:bg-orange-700 after:transition-all after:duration-300 hover:after:w-full"
-          >
+          <Link href="/pricing" className="hover:text-[#a53000] transition-colors">
             Pricing
-          </a>
+          </Link>
 
-          {/* Solutions with dropdown */}
+          {/* Solutions Dropdown */}
           <div className="relative group">
             <a href="/solutions/website-visitor-identifier">
-              <button className="relative hover:text-orange-700 transition-colors after:content-[''] after:absolute after:left-0 after:bottom-[-6px] after:w-0 after:h-[2px] after:bg-orange-700 after:transition-all after:duration-300 hover:after:w-full">
-                Solutions
-              </button>
+                <button className="hover:text-[#a53000] transition-colors">
+                  Solutions
+                </button>
             </a>
-
-            <div className="absolute left-0 mt-3 w-60 rounded-2xl backdrop-blur-md bg-white/70 border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.08)] opacity-0 invisible translate-y-3 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]">
-              <ul className="py-3 text-gray-800">
+            <div className="absolute left-0 mt-3 w-56 rounded-lg bg-white border border-gray-200 shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <ul className="py-2 text-gray-800 text-sm">
                 <li>
                   <Link
                     href="/solutions/website-visitor-identifier"
-                    className="block px-5 py-2.5 hover:text-orange-700 hover:bg-white/40 transition-all duration-200 rounded-lg"
+                    className="block px-4 py-2 hover:bg-gray-50 hover:text-[#a53000]"
                   >
                     Website Visitor Identifier
                   </Link>
@@ -86,7 +98,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="/solutions/enhance-search"
-                    className="block px-5 py-2.5 hover:text-orange-700 hover:bg-white/40 transition-all duration-200 rounded-lg"
+                    className="block px-4 py-2 hover:bg-gray-50 hover:text-[#a53000]"
                   >
                     Enhanced Search ID
                   </Link>
@@ -94,7 +106,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="/solutions/b2b-data"
-                    className="block px-5 py-2.5 hover:text-orange-700 hover:bg-white/40 transition-all duration-200 rounded-lg"
+                    className="block px-4 py-2 hover:bg-gray-50 hover:text-[#a53000]"
                   >
                     B2B Data
                   </Link>
@@ -104,21 +116,57 @@ export default function Header() {
           </div>
 
           {/* Contact */}
-          <Link
-            href="/contact"
-            className="relative inline-block hover:text-orange-700 transition-colors after:content-[''] after:absolute after:left-0 after:bottom-[-6px] after:w-0 after:h-[2px] after:bg-orange-700 after:transition-all after:duration-300 hover:after:w-full"
-          >
-            Contact Us
+          <Link href="/contact" className="hover:text-[#a53000] transition-colors">
+            Contact
           </Link>
         </nav>
 
-        {/* Book Demo Button */}
-        <a href="/book-demo/">
-          <button className="bg-[#a53000] text-white px-6 py-2.5 rounded-full font-semibold hover:bg-[#8f2800] transition-all duration-300 shadow-md hover:shadow-lg">
+        {/* CTA Button (Desktop Only) */}
+        <a href="/book-demo/" className="hidden md:block">
+          <button className="bg-[#a53000] text-white px-6 py-2.5 rounded-full font-semibold hover:bg-[#8f2800] shadow-sm hover:shadow-md transition-all duration-300">
             Book A Demo
           </button>
         </a>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-gray-800 focus:outline-none"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen ? "true" : "false"}
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-white border-t border-gray-200 shadow-md py-4 px-6 space-y-4">
+          <Link href="/" className="block text-gray-800 hover:text-[#a53000]">
+            Home
+          </Link>
+          <Link href="/pricing" className="block text-gray-800 hover:text-[#a53000]">
+            Pricing
+          </Link>
+          <Link
+            href="/solutions/website-visitor-identifier"
+            className="block text-gray-800 hover:text-[#a53000]"
+          >
+            Solutions
+          </Link>
+          <Link href="/contact" className="block text-gray-800 hover:text-[#a53000]">
+            Contact
+          </Link>
+          <div className="pt-4">
+            <a href="/book-demo/">
+              <button className="w-full bg-[#a53000] text-white py-2 rounded-md font-semibold hover:bg-[#8f2800] transition-all duration-300" name="Ham-Burger">
+                Book A Demo
+              </button>
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

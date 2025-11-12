@@ -3,81 +3,64 @@ import Image from "next/image";
 
 export default function AgencySection() {
   return (
-    <section className="bg-[#fff9f7] py-20 px-6 font-sans">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        {/* Left Content */}
-        <div className="text-left">
-          {/* Heading */}
-          <h2 className="text-[42px] font-bold text-gray-900 leading-tight mb-6">
-            Your <span className="text-[#a53000]">Agency.</span><br />
-            Your <span className="text-[#a53000]">Leads.</span><br />
-            Your <span className="text-[#a53000]">Brand.</span>
+    <section className="bg-[#fff7f6] py-16 px-4 sm:px-6 font-sans">
+      <div className="max-w-6xl mx-auto bg-white shadow-sm rounded-xl border border-gray-100 p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        {/* Left Section */}
+        <div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-4">
+            Your Agency. Your Leads. Your Brand.
           </h2>
-
-          {/* Subheading */}
-          <p className="text-[18px] text-gray-700 mb-10 leading-relaxed">
-            Discover, capture, and deliver high-intent leads — powered by precision
-            tracking and seamless integrations, all under your own brand.
+          <p className="text-gray-700 mb-8">
+            Capture, track, and deliver ready-to-convert leads—without third-party branding or software limitations.
           </p>
 
-          {/* Feature List */}
-          <div className="space-y-8 border-l-4 border-[#a53000] pl-6">
+          <div className="space-y-6">
             <div>
-              <h4 className="font-semibold text-gray-900 text-[18px] mb-1">
+              <h3 className="font-semibold text-lg mb-2 text-gray-900">
                 Capture & Identify
-              </h4>
-              <p className="text-gray-600 text-[16px] leading-relaxed">
-                Use intelligent keyword and behavior tracking to identify real users
-                actively searching for your clients’ services. IntentCept pinpoints
-                opportunities in real time, ensuring your leads are always fresh and relevant.
+              </h3>
+              <p className="text-gray-600 text-sm sm:text-base">
+                Use smart tracking tools to discover real people interested in your client’s business.
               </p>
             </div>
 
             <div>
-              <h4 className="font-semibold text-gray-900 text-[18px] mb-1">
+              <h3 className="font-semibold text-lg mb-2 text-gray-900">
                 Deliver
-              </h4>
-              <p className="text-gray-600 text-[16px] leading-relaxed">
-                Automatically route verified contacts directly into your CRM, email
-                platform, or sales pipeline — no manual work required. Our integration
-                layer ensures data is synchronized instantly and accurately.
+              </h3>
+              <p className="text-gray-600 text-sm sm:text-base">
+                Automatically send leads to your favorite CRMs, email platforms, or sales pipelines with zero manual effort.
               </p>
             </div>
 
             <div>
-              <h4 className="font-semibold text-gray-900 text-[18px] mb-1">
+              <h3 className="font-semibold text-lg mb-2 text-gray-900">
                 Scale
-              </h4>
-              <p className="text-gray-600 text-[16px] leading-relaxed">
-                Expand your agency effortlessly with unlimited campaigns, complete
-                white-label branding, and streamlined lead management. Focus on
-                results — while IntentCept automates the rest.
+              </h3>
+              <p className="text-gray-600 text-sm sm:text-base">
+                Grow your agency effortlessly with unlimited campaigns, white-labeled branding, and flexible client management.
               </p>
             </div>
           </div>
 
-          {/* CTA Button */}
-          <div className="mt-10">
-            <a href="/book-demo/">
-              <button className="bg-[#a53000] text-white px-8 py-3 rounded-full font-semibold text-[17px] hover:bg-[#8f2800] transition-all duration-300 shadow-md hover:shadow-lg">
-                Start Scaling Your Agency with Precision
+          <div className="mt-8">
+            <a href="/pricing/">
+              <button className="bg-[#b53000] text-white px-6 py-3 rounded-md font-medium hover:bg-[#8f2800] transition">
+                Start Scaling Your Agency Now!
               </button>
             </a>
           </div>
         </div>
 
-        {/* Right Funnel Image */}
-        <div className="relative flex justify-center">
-          {/* Background Glow */}
-          <div className="absolute -z-10 w-80 h-80 bg-[#a53000]/10 rounded-full blur-3xl top-10 right-10"></div>
-
-          {/* Funnel Graphic */}
+        {/* Right Section - Funnel Image */}
+        <div className="flex justify-center md:justify-end">
           <Image
-            src="/Agency-Icons/Funnel.png" // Replace this with your new funnel PNG path
-            alt="Agency Funnel Illustration"
-            width={500}
-            height={500}
-            className="object-contain mt-90 drop-shadow-xl"
+            src="/Agency-Icons/Funnel.png"
+            alt="Lead Funnel"
+            width={480}
+            height={480}
+            className="object-contain"
+            loading="lazy"
           />
         </div>
       </div>

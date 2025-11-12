@@ -30,7 +30,7 @@ export default function Integrations() {
   const allLogos = [...logos, ...logos];
 
   return (
-    <section  className="py-16 text-center bg-white relative overflow-hidden font-sans">
+    <section   className="py-16 text-center bg-white relative overflow-hidden font-sans">
       {/* Heading */}
       <h2 className="text-4xl md:text-5xl  font-bold text-gray-800 mb-10 tracking-relaxed">
        <span className="text-4xl md:text-5xl text-[#a53000]">Integrate</span> with your <span className="text-[#a53000]">tools</span> 
@@ -49,10 +49,12 @@ export default function Integrations() {
               <Image
                 src={`/Logos/${logo}`}
                 alt={logo.replace(/\.\w+$/, "")}
-                width={100}
-                height={40}
-                className="h-10 w-auto object-contain opacity-80 hover:opacity-100 transition"
+                width={80}
+                height={35}
+                priority
+                className="h-8 sm:h-10 w-auto object-contain opacity-80 hover:opacity-100 transition"
               />
+
             </div>
           ))}
         </div>

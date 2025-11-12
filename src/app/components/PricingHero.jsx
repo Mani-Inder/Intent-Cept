@@ -1,42 +1,55 @@
+
+import Image from "next/image";
 import React from "react";
-import { ChevronDown } from "lucide-react";
+
+export const metadata = {
+  title: "Pricing | IntentCept",
+  description:
+    "Choose the perfect IntentCept plan to scale your agency with unlimited leads, automation, and integrations.",
+  keywords: [
+    "IntentCept Pricing",
+    "Lead Generation Pricing",
+    "Marketing Automation Plans",
+    "AI Sales Platform",
+    "Agency Growth Tools",
+  ],
+  openGraph: {
+    title: "IntentCept Pricing",
+    description:
+      "Find the right IntentCept plan to grow your agency — transparent pricing for every stage.",
+    url: "https://intentcept.vercel.app/pricing",
+    images: ["/og-image.png"],
+  },
+};
 
 export default function PricingHero() {
   return (
-    <section className="flex flex-col md:flex-row justify-between items-center px-6 md:px-16 lg:px-24 py-20 bg-gradient-to-b from-white via-[#fff8f5] to-white relative overflow-hidden font-sans">
+    <section className="flex flex-col md:flex-row justify-between items-center px-4 sm:px-8 md:px-16 lg:px-24 py-16 bg-white font-sans">
       {/* Left Content */}
-      <div className="md:w-1/2 text-left space-y-5 ml-25">
-        {/* Tagline */}
-        <div className="inline-block border border-gray-300 rounded-full px-4 py-1 text-xs md:text-sm font-medium text-gray-700 tracking-wide">
+      <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
+        <div className="inline-block border border-gray-200 rounded-full px-4 py-1.5 text-sm font-semibold text-gray-600 bg-white/60 backdrop-blur-md shadow-sm">
           BUILT TO SCALE. PRICED TO WIN.
         </div>
-
-        {/* Heading */}
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-snug">
-          Unlock Your{" "}
-          <span className="text-orange-700">Agency’s</span> <br />
-          Next-Level Potential
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-snug">
+          Unlock Your <span className="text-[#a53000]">Agency’s</span> Next-Level Potential
         </h1>
-
-        {/* Subtext */}
-        <p className="text-gray-700 text-lg md:text-xl leading-relaxed max-w-lg mx-auto md:mx-0">
-          Whether you're starting strong or scaling fast, there’s a plan that
-          matches your momentum.
+        <p className="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed max-w-lg mx-auto md:mx-0">
+          Whether you're starting strong or scaling fast, there’s a plan that matches your momentum.
         </p>
-
-        
-        
       </div>
 
-      {/* Right Image */}
-      <div className="mt-12 md:mt-0 md:mr-70 flex justify-center md:justify-end ">
-        <img
-          src="Logos/Graphics.png"
-          alt="Pricing Diagram"
-          width={520}
-          height={360}
-          className="max-w-md w-460 mr-30 opacity-90 drop-shadow-lg transition-transform duration-500 hover:scale-105"
-        />
+      {/* Hero Image */}
+      <div className="mt-12 md:mt-0 w-full md:w-1/2 flex justify-center md:justify-end">
+        <div className="relative w-[85%] sm:w-[70%] md:w-[90%] lg:w-[80%] max-w-[600px]">
+          <Image
+            src="/Logos/Graphics.png"
+            alt="IntentCept Pricing Banner"
+            width={650}
+            height={450}
+            className="w-full h-auto rounded-lg drop-shadow-lg transition-transform duration-500 hover:scale-105"
+            priority
+          />
+        </div>
       </div>
     </section>
   );
